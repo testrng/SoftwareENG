@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
-    <meta charset="utf-8">
-<body>
-    <p>Hier ein <span style= color:blue;>Inline-span-Element</span> im Text</p>
+    <head><meta charset="utf-8"></head>
+<p id="dmeSupported"> Info über Device Motion</p>
+<h1 id="xBeschl"> Daten x</h1>
+<h1 id="yBeschl"> Daten y</h1>
+<h1 id="zBeschl"> Daten z</h1>
 
-        <div style="background-color:white; color:green; padding:20px; border:2px solid black"> 
-            <h1>Eine grüne Überschrift innerhalb eines div-Elements</h1>
-            <p>Hier ein grüner Absatz innerhalb desselben div-Elements</p>
-        </div> 
-</body>
+<script>if (window.DeviceMotionEvent) {
+        document.getElementById("dmeSupported").innerText = "OK - Device Motion wird unterstützt!";
+        window.addEventListener('devicemotion', function(event) {
+        document.getElementById("xBeschl").innerHTML = 'x ' + event.acceleration.x.toFixed(2);
+        document.getElementById("yBeschl").innerHTML = 'y ' + event.acceleration.y.toFixed(2);
+        document.getElementById("zBeschl").innerHTML = 'z ' + event.acceleration.z.toFixed(2);
+        });
+        } else {
+        document.getElementById("dmeSupported").innerText = "Device Motion wird nicht unterstützt!";
+        }</script>>
 </html>
