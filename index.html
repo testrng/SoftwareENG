@@ -2,9 +2,12 @@
 <html>
         <head><meta charset="utf-8"></head>
         <p id="dmeSupported"> Info über Device Motion</p>
-        <h1 id="Alphadrehung"> Daten x</h1>
-        <h1 id="Betadrehung"> Daten y</h1>
-        <h1 id="Gammadrehung"> Daten z</h1>
+        <h1 id="Alphadrehung"> Daten z</h1>
+        <h1 id="Betadrehung"> Daten x</h1>
+        <h1 id="Gammadrehung"> Daten y</h1>
+
+
+
     <script>
         if (window.DeviceMotionEvent) {
         document.getElementById("dmeSupported").innerText = "OK - Device Motion wird unterstützt!";
@@ -15,13 +18,14 @@
         var beta     = event.beta;
         var gamma    = event.gamma;
 
-        document.getElementById("Alphadrehung").innerHTML = 'x ' + alpha;
-        document.getElementById("Betadrehung").innerHTML = 'y ' + beta;
-        document.getElementById("Gammadrehung").innerHTML = 'z ' + gamma;
+        document.getElementById("Alphadrehung").innerHTML = 'Drehung um z-Achse ' + alpha;
+        document.getElementById("Betadrehung").innerHTML = 'Drehung um x-Achse ' + beta;
+        document.getElementById("Gammadrehung").innerHTML = 'Drehung um y-Achse ' + gamma;
 }
 }
   else {
         document.getElementById("dmeSupported").innerText = "Device Motion wird nicht unterstützt!";
         }
     </script>
+    <img src=image/gammadrehung.jpg>
 </html>
